@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      id="favicon"
+      rel="icon"
+      type="image/svg+xml"
+      href="/lightning-favicon.svg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZScore</title>
+    <script>
+      // Load the favicon from localStorage if available
+      const storedFaviconType =
+        localStorage.getItem("zscore-favicon-type") || "default";
+      const favicon = document.getElementById("favicon");
+
+      switch (storedFaviconType) {
+        case "alt":
+          favicon.href = "/lightning-alt-favicon.svg";
+          break;
+        case "filled":
+          favicon.href = "/lightning-filled-favicon.svg";
+          break;
+        default:
+          favicon.href = "/lightning-favicon.svg";
+      }
+
+      // Add window event to allow updating favicon from React components
+      window.updateFavicon = function (type) {
+        const favicon = document.getElementById("favicon");
+        localStorage.setItem("zscore-favicon-type", type);
+
+        switch (type) {
+          case "alt":
+            favicon.href = "/lightning-alt-favicon.svg";
+            break;
+          case "filled":
+            favicon.href = "/lightning-filled-favicon.svg";
+            break;
+          default:
+            favicon.href = "/lightning-favicon.svg";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
