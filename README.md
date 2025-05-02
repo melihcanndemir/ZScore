@@ -39,8 +39,8 @@ Make sure you have the following installed:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/shannon-entropy.git
-cd shannon-entropy
+git clone https://github.com/melihcanndemir/ZScore.git
+cd ZScore
 ```
 
 2. Install dependencies:
