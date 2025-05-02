@@ -1,0 +1,66 @@
+{
+  "app": {
+    "title": "ZScore",
+    "description": "Metin karmaşıklığını ve bilgi içeriğini analiz edin",
+    "subtitle": "Shannon Entropi Hesaplayıcı"
+  },
+  "navbar": {
+    "title": "ZScore",
+    "darkMode": "Karanlık Mod",
+    "lightMode": "Aydınlık Mod",
+    "language": "Dil",
+    "home": "Ana Sayfa",
+    "about": "ZScore Hakkında",
+    "calculator": "Hesaplayıcı",
+    "history": "Geçmiş"
+  },
+  "header": {
+    "title": "Shannon Entropi Hesaplayıcı",
+    "subtitle": "Shannon entropi, sözcük çeşitliliği, kelime sıklığı ve diğer dilbilimsel metrikleri hesaplamak için metin analizi yapın. Başlamak için aşağıya metninizi girin."
+  },
+  "textInput": {
+    "label": "Analiz için metin girin",
+    "placeholder": "Shannon Entropi ve diğer dilsel ölçümleri analiz etmek için buraya metin girin...",
+    "analyzeButton": "Metni Analiz Et",
+    "clearButton": "Temizle",
+    "examples": "Aşağıdaki örnek metinleri deneyin",
+    "loadText": "Yükle",
+    "removeText": "Kaldır"
+  },
+  "results": {
+    "title": "Analiz Sonuçları",
+    "wordCount": "Kelime Sayısı",
+    "uniqueWords": "Benzersiz Kelimeler",
+    "lexicalDiversity": "Sözcük Çeşitliliği",
+    "shannonEntropy": "Shannon Entropi",
+    "interpretation": {
+      "title": "Yorum",
+      "high": "Yüksek entropi, çeşitli kelime dağarcığı olan karmaşık ve tahmin edilemeyen metni gösterir.",
+      "medium": "Orta entropi, orta düzeyde karmaşıklığa sahip dengeli, doğal dil kullanımını gösterir.",
+      "low": "Düşük entropi, sınırlı kelime dağarcığı olan tekrarlayan, tahmin edilebilir metni gösterir."
+    },
+    "noResults": "Henüz analiz sonucu yok. Bir metin girin ve Analiz Et'e tıklayın.",
+    "ratioExplanation": "Toplam kelimelere göre benzersiz kelimelerin oranı",
+    "entropyExplanation": "Bilgi içeriği veya tahmin edilemezlik ölçüsü",
+    "topWords": "En Sık Kullanılan 10 Kelime"
+  },
+  "history": {
+    "title": "Analiz Geçmişi",
+    "empty": "Henüz analiz geçmişi yok",
+    "clearButton": "Geçmişi Temizle",
+    "timestamp": "Analiz tarihi",
+    "loadTooltip": "Bu metni yükle",
+    "removeTooltip": "Geçmişten kaldır"
+  },
+  "footer": {
+    "title": "Shannon Entropi Hesaplayıcı",
+    "description": "Bilgi entropisi ve sözcük çeşitliliği metriklerini hesaplamak için bir araç",
+    "credit": "Bilgi teorisi prensipleriyle oluşturulmuştur",
+    "source": "Kaynak Kodu",
+    "manifesto": "Manifestoyu Oku",
+    "about": "Shannon Entropi Hakkında",
+    "aboutText": "Shannon entropi, bir değişkenin olası sonuçlarındaki bilgi miktarını veya belirsizliği ölçer. Claude Shannon tarafından 1948 yılında \"İletişimin Matematiksel Teorisi\" adlı makalesinde tanıtılmıştır.",
+    "formula": "Formül",
+    "copyright": "Entropi, amaç ve anlam fısıltısıyla hazırlanmıştır. Tüm hakları saklıdır."
+  }
+} 

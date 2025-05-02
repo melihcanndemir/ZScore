@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { useTextStore } from "../store/textStore";
 import { ChartData } from "../types";
 
@@ -46,6 +47,7 @@ const SimpleBarChart: React.FC<{ data: ChartData }> = ({ data }) => {
  * Results display component showing text analysis metrics and visualization
  */
 const ResultsDisplay: React.FC = () => {
+  const { t } = useTranslation();
   const { currentResult } = useTextStore();
 
   // If no result, don't render anything
@@ -71,7 +73,7 @@ const ResultsDisplay: React.FC = () => {
       transition={{ duration: 0.5 }}
     >
       <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-        Analysis Results
+        {t("results.title")}
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -79,7 +81,7 @@ const ResultsDisplay: React.FC = () => {
         <div className="space-y-4">
           <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
             <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-              Word Count
+              {t("results.wordCount")}
             </h3>
             <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">
               {currentResult.wordCount}
@@ -88,7 +90,7 @@ const ResultsDisplay: React.FC = () => {
 
           <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
             <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-              Unique Words
+              {t("results.uniqueWords")}
             </h3>
             <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">
               {currentResult.uniqueWordCount}
@@ -97,25 +99,25 @@ const ResultsDisplay: React.FC = () => {
 
           <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
             <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-              Lexical Diversity
+              {t("results.lexicalDiversity")}
             </h3>
             <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">
               {formatNumber(currentResult.lexicalDiversity, 4)}
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              (Ratio of unique words to total words)
+              ({t("results.ratioExplanation")})
             </p>
           </div>
 
           <div className="bg-primary-50 dark:bg-gray-700 dark:border-primary-800 p-4 rounded-lg border border-primary-100">
             <h3 className="text-sm font-medium text-primary-700 dark:text-primary-400 mb-1">
-              Shannon Entropy
+              {t("results.shannonEntropy")}
             </h3>
             <p className="text-2xl font-bold text-primary-900 dark:text-primary-300">
               {formatNumber(currentResult.shannonEntropy, 4)} bits/word
             </p>
             <p className="text-xs text-primary-700 dark:text-primary-400 mt-1">
-              (Measure of information content or unpredictability)
+              ({t("results.entropyExplanation")})
             </p>
           </div>
         </div>
@@ -123,7 +125,7 @@ const ResultsDisplay: React.FC = () => {
         {/* Frequency visualization */}
         <div>
           <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
-            Top 10 Word Frequencies
+            {t("results.topWords")}
           </h3>
           <SimpleBarChart data={topWords} />
         </div>

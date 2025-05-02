@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useThemeStore } from "../store/themeStore";
+import { useLanguageStore } from "../store/languageStore";
+import { useTranslation } from "react-i18next";
 import { Lightning, LightningAlt, LightningFilled } from "./icons";
 
 /**
@@ -8,7 +10,7 @@ import { Lightning, LightningAlt, LightningFilled } from "./icons";
  */
 interface NavItem {
   id: string;
-  label: string;
+  translationKey: string;
   href: string;
 }
 
@@ -16,10 +18,14 @@ interface NavItem {
  * Navigation items for the application
  */
 const navItems: NavItem[] = [
-  { id: "home", label: "Home", href: "#" },
-  { id: "about", label: "About ZScore", href: "#about" },
-  { id: "calculator", label: "Calculator", href: "#calculator" },
-  { id: "history", label: "History", href: "#history" },
+  { id: "home", translationKey: "navbar.home", href: "#" },
+  { id: "about", translationKey: "navbar.about", href: "#about" },
+  {
+    id: "calculator",
+    translationKey: "navbar.calculator",
+    href: "#calculator",
+  },
+  { id: "history", translationKey: "navbar.history", href: "#history" },
 ];
 
 // Lightning icon type enum
@@ -33,10 +39,12 @@ declare global {
 }
 
 /**
- * Navbar component with navigation items and theme toggle
+ * Navbar component with navigation items, theme toggle and language switcher
  */
 const Navbar: React.FC = () => {
+  const { t } = useTranslation();
   const { isDarkMode, toggleTheme } = useThemeStore();
+  const { language, setLanguage } = useLanguageStore();
   const [lightningType, setLightningType] = useState<LightningType>(() => {
     // Initialize from localStorage if available
     const storedType = localStorage.getItem("zscore-favicon-type");
@@ -72,6 +80,11 @@ const Navbar: React.FC = () => {
 
       return newType;
     });
+  };
+
+  // Toggle language between English and Turkish
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "tr" : "en");
   };
 
   // Render the current lightning icon
@@ -112,7 +125,7 @@ const Navbar: React.FC = () => {
                 {renderLightningIcon()}
               </div>
               <span className="text-lg font-bold text-primary-700 dark:text-primary-400">
-                ZScore
+                {t("navbar.title")}
               </span>
             </a>
           </div>
@@ -126,21 +139,35 @@ const Navbar: React.FC = () => {
                     href={item.href}
                     className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors"
                   >
-                    {item.label}
+                    {t(item.translationKey)}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Theme Toggle */}
-          <div className="flex items-center">
+          {/* Theme Toggle and Language Switcher */}
+          <div className="flex items-center space-x-2">
+            {/* Language Switcher */}
+            <button
+              onClick={toggleLanguage}
+              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
+              aria-label={t("navbar.language")}
+              title={t("navbar.language")}
+            >
+              <span className="font-medium text-sm">
+                {language === "en" ? "TR" : "EN"}
+              </span>
+            </button>
+
+            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
               aria-label={
-                isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+                isDarkMode ? t("navbar.lightMode") : t("navbar.darkMode")
               }
+              title={isDarkMode ? t("navbar.lightMode") : t("navbar.darkMode")}
             >
               {isDarkMode ? (
                 <svg

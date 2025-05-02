@@ -1,11 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { useTextStore } from "../store/textStore";
 
 /**
  * Text input component for entering and analyzing text
  */
 const TextInput: React.FC = () => {
+  const { t } = useTranslation();
   // Get store state and actions
   const { currentText, setText, analyzeCurrentText, clearCurrentText } =
     useTextStore();
@@ -26,12 +28,12 @@ const TextInput: React.FC = () => {
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="textInput" className="label">
-            Enter Text for Analysis
+            {t("textInput.label")}
           </label>
           <textarea
             id="textInput"
             rows={6}
-            placeholder="Enter text here to analyze Shannon entropy and other linguistic metrics..."
+            placeholder={t("textInput.placeholder")}
             className="input h-40 font-mono resize-y"
             value={currentText}
             onChange={(e) => setText(e.target.value)}
@@ -45,7 +47,7 @@ const TextInput: React.FC = () => {
             onClick={clearCurrentText}
             disabled={!currentText}
           >
-            Clear
+            {t("textInput.clearButton")}
           </button>
 
           <motion.button
@@ -55,7 +57,7 @@ const TextInput: React.FC = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            Analyze Text
+            {t("textInput.analyzeButton")}
           </motion.button>
         </div>
       </form>
@@ -63,7 +65,7 @@ const TextInput: React.FC = () => {
       {/* Sample text suggestions */}
       <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
         <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
-          Try these sample texts:
+          {t("textInput.examples")}:
         </h3>
         <div className="flex flex-wrap gap-2">
           {[

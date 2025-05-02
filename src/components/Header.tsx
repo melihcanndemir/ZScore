@@ -1,10 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 /**
  * Header component with app title and description
  */
 const Header: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <motion.header
       className="py-6 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm"
@@ -21,12 +24,10 @@ const Header: React.FC = () => {
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           <h1 className="text-3xl font-bold text-primary-700 dark:text-primary-400 tracking-tight">
-            Shannon Entropy Calculator
+            {t("header.title")}
           </h1>
           <p className="text-gray-600 dark:text-gray-400 max-w-3xl">
-            Analyze text to calculate Shannon entropy, lexical diversity, word
-            frequency, and other linguistic metrics. Enter your text below to
-            get started.
+            {t("header.subtitle")}
           </p>
         </motion.div>
       </div>
