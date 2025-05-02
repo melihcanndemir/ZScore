@@ -2,10 +2,10 @@
 
 A sophisticated web application for text analysis and Shannon entropy calculation. This application provides insights into text complexity, lexical diversity, and information content through statistical analysis.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_BADGE_ID/deploy-status)](https://your-app.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1725b025-d8cd-4aed-828e-9e7643917c27/deploy-status)](https://app.netlify.com/sites/zscore-ai/deploys)
 
 ## 🚀 Live Demo  
-🔗 [Click here to try the Shannon Entropy Calculator](https://your-app.netlify.app)
+🔗 [Click here to try the Shannon Entropy Calculator](https://zscore-ai.netlify.app/)
 
 
 ## Features
