@@ -17,6 +17,10 @@ A sophisticated web application for text analysis and Shannon entropy calculatio
 - **Shannon Entropy**: Measure the information content or unpredictability of text
 - **Word Frequency**: Visualize the frequency distribution of words
 - **Analysis History**: Save and review past analyses with persistent storage
+- **Multi-language Support**: Full internationalization with English and Turkish languages
+- **Responsive Design**: Optimized for both desktop and mobile devices
+- **Dark/Light Mode**: Toggle between light and dark themes for comfortable viewing
+- **Persistent Settings**: User preferences for language and theme are saved between sessions
 
 ## Technology Stack
 
@@ -26,6 +30,8 @@ A sophisticated web application for text analysis and Shannon entropy calculatio
 - **Tailwind CSS**: Utility-first CSS framework for responsive design
 - **Zustand**: Simple state management without boilerplate
 - **Framer Motion**: Animation library for smooth UI transitions
+- **i18next**: Complete internationalization solution
+- **Persistent Storage**: Local storage for saving user preferences and history
 
 ## Getting Started
 
@@ -73,6 +79,22 @@ Where:
 
 In text analysis, this measures how unpredictable or informative the text is. Higher entropy indicates more diverse, unpredictable text, while lower entropy suggests more predictable, repetitive text.
 
+## 🌐 Internationalization
+
+The application supports multiple languages:
+- English (default)
+- Turkish
+
+Language settings are automatically saved and restored between sessions. You can switch languages using the language toggle in the navigation bar.
+
+## 📱 Mobile Support
+
+The application is fully responsive and optimized for mobile devices:
+- Adaptive layout for different screen sizes
+- Touch-friendly interface
+- Hamburger menu for navigation on small screens
+- Optimized reading experience on mobile devices
+
 ## 📜 ZScore Manifesto  
 Learn about the philosophy and design process behind this project.  
 🔗 [Read the manifesto](./zscore-manifesto.md)
@@ -89,10 +111,11 @@ Learn about the philosophy and design process behind this project.
 
 ## License
 
-MIT License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
 - Claude Shannon for his groundbreaking work in information theory
 - The React team for their excellent framework
 - The open-source community for providing amazing tools
+- Contributors who helped improve the project
