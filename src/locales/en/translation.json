@@ -12,7 +12,8 @@
     "home": "Home",
     "about": "About ZScore",
     "calculator": "Calculator",
-    "history": "History"
+    "history": "History",
+    "github": "GitHub"
   },
   "header": {
     "title": "Shannon Entropy Calculator",

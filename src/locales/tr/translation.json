@@ -12,7 +12,8 @@
     "home": "Ana Sayfa",
     "about": "ZScore Hakkında",
     "calculator": "Hesaplayıcı",
-    "history": "Geçmiş"
+    "history": "Geçmiş",
+    "github": "GitHub"
   },
   "header": {
     "title": "Shannon Entropi Hesaplayıcı",

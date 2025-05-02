@@ -12,6 +12,7 @@ interface NavItem {
   id: string;
   translationKey: string;
   href: string;
+  isExternal?: boolean;
 }
 
 /**
@@ -26,6 +27,12 @@ const navItems: NavItem[] = [
     href: "#calculator",
   },
   { id: "history", translationKey: "navbar.history", href: "#history" },
+  {
+    id: "github",
+    translationKey: "navbar.github",
+    href: "https://github.com/melihcanndemir/ZScore",
+    isExternal: true,
+  },
 ];
 
 // Lightning icon type enum
@@ -138,6 +145,8 @@ const Navbar: React.FC = () => {
                   <a
                     href={item.href}
                     className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors"
+                    target={item.isExternal ? "_blank" : undefined}
+                    rel={item.isExternal ? "noopener noreferrer" : undefined}
                   >
                     {t(item.translationKey)}
                   </a>
