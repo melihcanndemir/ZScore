@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useThemeStore } from "../store/themeStore";
-import { useLanguageStore } from "../store/languageStore";
+import { useLanguageStore, SupportedLanguage } from "../store/languageStore";
 import { useTranslation } from "react-i18next";
 import { Lightning, LightningAlt, LightningFilled } from "./icons";
 
@@ -116,7 +116,8 @@ const Navbar: React.FC = () => {
 
   // Toggle language between English and Turkish
   const toggleLanguage = () => {
-    setLanguage(language === "en" ? "tr" : "en");
+    const newLanguage: SupportedLanguage = language === "en" ? "tr" : "en";
+    setLanguage(newLanguage);
   };
 
   // Render the current lightning icon

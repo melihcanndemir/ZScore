@@ -6,12 +6,19 @@ import ResultsDisplay from "./components/ResultsDisplay";
 import HistoryPanel from "./components/HistoryPanel";
 import Footer from "./components/Footer";
 import { useThemeStore } from "./store/themeStore";
+import { useLanguageStore } from "./store/languageStore";
 
 /**
  * Main App component that composes all other components
  */
 const App: React.FC = () => {
   const { isDarkMode } = useThemeStore();
+  const { initializeLanguage } = useLanguageStore();
+
+  // Initialize language on application load
+  useEffect(() => {
+    initializeLanguage();
+  }, [initializeLanguage]);
 
   // Apply dark mode class to document on mount based on store state
   useEffect(() => {
