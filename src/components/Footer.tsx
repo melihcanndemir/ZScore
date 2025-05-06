@@ -8,19 +8,19 @@ const Footer: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="py-6 mt-12 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+    <footer className="py-6 mt-12 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div>
             <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
               {t("footer.title")}
             </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
               {t("footer.description")}
             </p>
           </div>
 
-          <div className="text-sm text-gray-600 dark:text-gray-400" id="about">
+          <div className="text-sm text-gray-700 dark:text-gray-300" id="about">
             <div className="mb-2">
               <h3 className="font-medium text-gray-900 dark:text-gray-100">
                 {t("footer.about")}
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-700 text-center text-xs text-gray-500 dark:text-gray-500">
+        <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-700 text-center text-xs text-gray-700 dark:text-gray-300">
           © {new Date().getFullYear()} Melih Can Demir. {t("footer.copyright")}
         </div>
       </div>
