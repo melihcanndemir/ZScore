@@ -20,6 +20,7 @@
     "subtitle": "Shannon entropi, sözcük çeşitliliği, kelime sıklığı ve diğer dilbilimsel metrikleri hesaplamak için metin analizi yapın. Başlamak için aşağıya metninizi girin."
   },
   "textInput": {
+    "title": "Metin Analizi Girişi",
     "label": "Analiz için metin girin",
     "placeholder": "Shannon Entropi ve diğer dilsel ölçümleri analiz etmek için buraya metin girin...",
     "analyzeButton": "Metni Analiz Et",

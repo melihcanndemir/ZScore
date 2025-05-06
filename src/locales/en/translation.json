@@ -20,6 +20,7 @@
     "subtitle": "Analyze text to calculate Shannon entropy, lexical diversity, word frequency, and other linguistic metrics. Enter your text below to get started."
   },
   "textInput": {
+    "title": "Text Analysis Input",
     "label": "Enter Text for Analysis",
     "placeholder": "Enter text here to analyze Shannon Entropy and other linguistic metrics...",
     "analyzeButton": "Analyze Text",

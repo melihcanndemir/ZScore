@@ -25,6 +25,10 @@ const TextInput: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
     >
+      <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+        {t("textInput.title") || "Text Analysis"}
+      </h2>
+
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="textInput" className="label">
