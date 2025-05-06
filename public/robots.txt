@@ -1,0 +1,30 @@
+# ZScore AI Robots.txt
+# https://zscore-ai.netlify.app/
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow potential sensitive or utility routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /backend/
+
+# Specific crawler instructions
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location - Update with your actual domain
+Sitemap: https://zscore-ai.netlify.app/sitemap.xml
+
+# Host directive helps to specify preferred domain
+Host: zscore-ai.netlify.app/ 
