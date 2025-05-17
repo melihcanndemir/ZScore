@@ -45,8 +45,12 @@ export const calculateShannonEntropy = (
   
   // Calculate Shannon entropy: -sum(p_i * log2(p_i))
   for (const word in wordFrequency) {
-    const probability = wordFrequency[word] / totalWords;
-    entropy -= probability * Math.log2(probability);
+    const frequency = wordFrequency[word];
+    
+    if (frequency > 0) {
+      const probability = wordFrequency[word] / totalWords;
+      entropy -= probability * Math.log2(probability);
+    }
   }
   
   return entropy;
