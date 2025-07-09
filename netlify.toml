@@ -1,6 +1,5 @@
 [build]
-  publish = "dist"
-  command = "npm run build"
+  command = "npx intlayer dictionaries build && npm run build"
 
 # Redirect all routes to index.html for SPA routing
 [[redirects]]
