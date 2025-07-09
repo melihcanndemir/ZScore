@@ -1,5 +1,5 @@
 [build]
-  command = "npx intlayer dictionaries build && npm run build"
+  command = "npm run intlayer:build && npm run build"
 
 # Redirect all routes to index.html for SPA routing
 [[redirects]]
