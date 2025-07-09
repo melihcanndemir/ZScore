@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
+import { useIntlayer } from "react-intlayer";
 
 /**
  * Header component with app title and description
  */
 const Header: React.FC = () => {
-  const { t } = useTranslation();
+  const content = useIntlayer("app");
 
   return (
     <motion.header
@@ -24,10 +24,10 @@ const Header: React.FC = () => {
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           <h1 className="text-3xl font-bold text-primary-700 dark:text-primary-400 tracking-tight">
-            {t("header.title")}
+            {content.header.title}
           </h1>
           <p className="text-gray-600 dark:text-gray-400 max-w-3xl">
-            {t("header.subtitle")}
+            {content.header.subtitle}
           </p>
         </motion.div>
       </div>

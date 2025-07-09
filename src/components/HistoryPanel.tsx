@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTranslation } from "react-i18next";
+import { useIntlayer } from "react-intlayer";
 import { useTextStore } from "../store/textStore";
 
 /**
@@ -14,7 +14,7 @@ const formatDate = (date: Date): string => {
  * HistoryPanel component to display past analyses
  */
 const HistoryPanel: React.FC = () => {
-  const { t } = useTranslation();
+  const content = useIntlayer("app");
   const { history, setText, clearHistory, removeHistoryItem } = useTextStore();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -44,14 +44,14 @@ const HistoryPanel: React.FC = () => {
               d="M9 5l7 7-7 7"
             />
           </svg>
-          {t("history.title")} ({history.length})
+          {content.history.title} ({history.length})
         </button>
 
         <button
           onClick={clearHistory}
           className="text-xs text-gray-500 dark:text-gray-500 hover:text-red-500 dark:hover:text-red-400"
         >
-          {t("history.clearButton")}
+          {content.history.clearButton}
         </button>
       </div>
 
@@ -75,23 +75,23 @@ const HistoryPanel: React.FC = () => {
                 >
                   <div className="flex justify-between">
                     <p className="text-xs text-gray-500 dark:text-gray-400">
-                      {t("history.timestamp")}{" "}
+                      {content.history.timestamp}{" "}
                       {formatDate(item.result.timestamp)}
                     </p>
                     <div className="flex gap-2">
                       <button
                         onClick={() => setText(item.result.text)}
                         className="text-xs text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300"
-                        title={t("history.loadTooltip")}
+                        title={content.history.loadTooltip}
                       >
-                        {t("textInput.loadText")}
+                        {content.textInput.loadText}
                       </button>
                       <button
                         onClick={() => removeHistoryItem(item.id)}
                         className="text-xs text-gray-500 dark:text-gray-500 hover:text-red-500 dark:hover:text-red-400"
-                        title={t("history.removeTooltip")}
+                        title={content.history.removeTooltip}
                       >
-                        {t("textInput.removeText")}
+                        {content.textInput.removeText}
                       </button>
                     </div>
                   </div>
@@ -104,7 +104,7 @@ const HistoryPanel: React.FC = () => {
                     <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-2 text-xs">
                       <div>
                         <span className="text-gray-500 dark:text-gray-400">
-                          {t("results.wordCount")}:
+                          {content.results.wordCount}:
                         </span>{" "}
                         <span className="dark:text-gray-300">
                           {item.result.wordCount}
@@ -112,7 +112,7 @@ const HistoryPanel: React.FC = () => {
                       </div>
                       <div>
                         <span className="text-gray-500 dark:text-gray-400">
-                          {t("results.uniqueWords")}:
+                          {content.results.uniqueWords}:
                         </span>{" "}
                         <span className="dark:text-gray-300">
                           {item.result.uniqueWordCount}
@@ -120,7 +120,7 @@ const HistoryPanel: React.FC = () => {
                       </div>
                       <div>
                         <span className="text-gray-500 dark:text-gray-400">
-                          {t("results.lexicalDiversity")}:
+                          {content.results.lexicalDiversity}:
                         </span>{" "}
                         <span className="dark:text-gray-300">
                           {item.result.lexicalDiversity.toFixed(4)}
@@ -128,7 +128,7 @@ const HistoryPanel: React.FC = () => {
                       </div>
                       <div>
                         <span className="text-gray-500 dark:text-gray-400">
-                          {t("results.shannonEntropy")}:
+                          {content.results.shannonEntropy}:
                         </span>{" "}
                         <span className="dark:text-gray-300">
                           {item.result.shannonEntropy.toFixed(4)} bits/word
