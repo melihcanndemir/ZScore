@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
+import { useIntlayer } from "react-intlayer";
 import { useTextStore } from "../store/textStore";
 
 /**
  * Text input component for entering and analyzing text
  */
 const TextInput: React.FC = () => {
-  const { t } = useTranslation();
+  const content = useIntlayer("app");
   // Get store state and actions
   const { currentText, setText, analyzeCurrentText, clearCurrentText } =
     useTextStore();
@@ -26,18 +26,18 @@ const TextInput: React.FC = () => {
       transition={{ duration: 0.5, delay: 0.3 }}
     >
       <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-        {t("textInput.title") || "Text Analysis"}
+        {content.textInput.title}
       </h2>
 
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="textInput" className="label">
-            {t("textInput.label")}
+            {content.textInput.label}
           </label>
           <textarea
             id="textInput"
             rows={6}
-            placeholder={t("textInput.placeholder")}
+            placeholder={content.textInput.placeholder.value}
             className="input h-40 font-mono resize-y"
             value={currentText}
             onChange={(e) => setText(e.target.value)}
@@ -51,7 +51,7 @@ const TextInput: React.FC = () => {
             onClick={clearCurrentText}
             disabled={!currentText}
           >
-            {t("textInput.clearButton")}
+            {content.textInput.clearButton}
           </button>
 
           <motion.button
@@ -61,7 +61,7 @@ const TextInput: React.FC = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            {t("textInput.analyzeButton")}
+            {content.textInput.analyzeButton}
           </motion.button>
         </div>
       </form>
@@ -69,7 +69,7 @@ const TextInput: React.FC = () => {
       {/* Sample text suggestions */}
       <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
         <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
-          {t("textInput.examples")}:
+          {content.textInput.examples}:
         </h3>
         <div className="flex flex-wrap gap-2">
           {[

@@ -13,11 +13,10 @@
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/forms": "^0.5.10",
     "framer-motion": "^12.9.4",
-    "i18next": "^25.0.2",
-    "i18next-browser-languagedetector": "^8.1.0",
+    "intlayer": "^5.5.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-i18next": "^15.5.1",
+    "react-intlayer": "^5.5.11",
     "zustand": "^5.0.4"
   },
   "devDependencies": {
@@ -25,6 +24,7 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react-swc": "^3.10.2",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.22.0",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -34,6 +34,7 @@
     "tailwindcss": "^3.4.17",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.26.1",
-    "vite": "^6.3.1"
+    "vite": "^6.3.1",
+    "vite-intlayer": "^5.5.11"
   }
 }

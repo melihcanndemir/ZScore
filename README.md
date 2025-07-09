@@ -30,7 +30,7 @@ A sophisticated web application for text analysis and Shannon entropy calculatio
 - **Tailwind CSS**: Utility-first CSS framework for responsive design
 - **Zustand**: Simple state management without boilerplate
 - **Framer Motion**: Animation library for smooth UI transitions
-- **i18next**: Complete internationalization solution
+- **Intlayer**: Advanced, type-safe internationalization solution for React
 - **Persistent Storage**: Local storage for saving user preferences and history
 
 ## Getting Started
@@ -86,6 +86,9 @@ The application supports multiple languages:
 - Turkish
 
 Language settings are automatically saved and restored between sessions. You can switch languages using the language toggle in the navigation bar.
+
+**Advanced Internationalization Guide:**
+For a comprehensive, type-safe, and advanced i18n setup using Intlayer (React + Vite + TypeScript), see the [Intlayer Integration Guide](./intlayer.md).
 
 ## 📱 Mobile Support
 
