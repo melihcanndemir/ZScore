@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "intlayer:build": "npx intlayer dictionaries build",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
